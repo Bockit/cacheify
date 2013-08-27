@@ -45,8 +45,4 @@ function cacheify (db, cachee, hash) {
   }
 }
 
-cacheify.close = function() {
-  db.close()
-}
-
 module.exports = cacheify
