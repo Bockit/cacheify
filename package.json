@@ -1,0 +1,27 @@
+{
+  "name": "cacheify",
+  "version": "0.1.0",
+  "description": "Wraps browserify transforms in a caching stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bockit/caching-transform.git"
+  },
+  "keywords": [
+    "browserify",
+    "cache",
+    "transform"
+  ],
+  "author": "James Hiscock",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Bockit/caching-transform/issues"
+  },
+  "dependencies": {
+    "through": "~2.3.4",
+    "concat-stream": "~1.0.1",
+  }
+}
