@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bockit/caching-transform.git"
+    "url": "https://github.com/Bockit/cacheify.git"
   },
   "keywords": [
     "browserify",
@@ -18,7 +18,7 @@
   "author": "James Hiscock",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/Bockit/caching-transform/issues"
+    "url": "https://github.com/Bockit/cacheify/issues"
   },
   "dependencies": {
     "through": "~2.3.4",
