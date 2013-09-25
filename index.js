@@ -26,6 +26,7 @@ function cacheify (db, cachee, hash) {
       db.get(hashed, function (err, transformed) {
         if (err) {
           var join = concat(function(d) {
+            d = d || ' '
             db.put(hashed, d)
             self.queue(d)
             self.queue(null)
