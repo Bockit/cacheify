@@ -28,7 +28,7 @@ function cacheify (cachee, _db) {
   transform = function (file) {
     // Early exit if we don't match the filter
     if (!filter(file)) {
-      return through()
+      return cachee(file)
     }
 
     var data = ''
@@ -40,7 +40,7 @@ function cacheify (cachee, _db) {
 
     // Do our transform if we need to, or get it from the cache if we can.
     function end () {
-      var hashed = hash(data)
+      var hashed = hash(data, file)
       var self = this
       var db = _db
 
@@ -74,7 +74,13 @@ function cacheify (cachee, _db) {
    * argument, the name of the file. Return true to check cacheify for a file,
    * false to use a default through stream.
    */
-  transform.filter = function(fn) {
+  transform.filter = function(_fn) {
+    var fn = _fn
+    if (fn instanceof RegExp) {
+      fn = function(name) {
+        return _fn.test(name)
+      }
+    }
     filter = fn
 
     return transform
@@ -89,14 +95,8 @@ function cacheify (cachee, _db) {
    * function that checks the filename on the regexp, returning true for a
    * match.
    */
-  transform.hash = function(_fn) {
-    var fn = _fn
-    if (fn instanceof RegExp) {
-      fn = function(name) {
-        return _fn.test(name)
-      }
-    }
-    hash = fn
+  transform.hash = function(fn) {
+    filter = fn
 
     return transform
   }
