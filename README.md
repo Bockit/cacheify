@@ -61,3 +61,8 @@ TODO
 ----
 
 - Tests, seriously.
+
+License
+-------
+
+BSD, see the LICENSE.md for more information.
