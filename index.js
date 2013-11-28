@@ -96,7 +96,7 @@ function cacheify (cachee, _db) {
    * match.
    */
   transform.hash = function(fn) {
-    filter = fn
+    hash = fn
 
     return transform
   }
