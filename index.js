@@ -7,7 +7,7 @@ function cacheify (cachee, _db) {
   /**
    * Default to taking the md5 of a file
    */
-  hash = function (content) {
+  function hash (content) {
     return crypto
       .createHash('md5')
       .update(content)
@@ -17,7 +17,7 @@ function cacheify (cachee, _db) {
   /**
    * Default to caching every file
    */
-  filter = function() {
+  function filter () {
     return true
   }
 
@@ -25,7 +25,7 @@ function cacheify (cachee, _db) {
    * Transforms a file, reading it from cache instead if the hash exists in the
    * cache already.
    */
-  transform = function (file) {
+  function transform (file) {
     // Early exit if we don't match the filter
     if (!filter(file)) {
       return cachee(file)
