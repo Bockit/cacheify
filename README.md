@@ -37,11 +37,11 @@ Creates a new cacheify transform.
 
 Replaces the default filter function (always returns true) with a function of your choosing. The filter function is called per file and if it returns a truthy value we will cache the results of the transform of the file, or read from the cache if it's already there. If it returns false we will apply the original transform without caching.
 
-- `fn`: The filter function you want to use. It takes one argument, the file path.
+- `fn`: The filter function you want to use. It takes one argument, the file path. If `fn` is a RegExp object, `cacheify.filter` will wrap it in a function that tests each filename against it.
 
 ###### `cacheify.hash(fn)` ######
 
-Replaces the default hash function (md5 of the files contents) with a function of your choosing. The hash function will be used to generate a unique key for a file, that we will check to see if it exists in the DB before applying the original transform. 
+Replaces the default hash function (md5 of the file's contents) with a function of your choosing. The hash function will be used to generate a unique key for a file, that we will check to see if it exists in the DB before applying the original transform. 
 
 - `fn`: The hash function you want to use. It takes two arguments, the file contents and the file path.
 
