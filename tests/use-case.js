@@ -53,5 +53,3 @@ test('Only transforms once', function(t) {
     // Run a few times
     bundle( function() { bundle(finish) } )
 });
-
-KQS-HkO_xv9bnF4D^tVWp5IL
