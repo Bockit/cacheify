@@ -57,6 +57,9 @@ function cacheify (cachee, _db) {
           })
 
           var tf = cachee(file)
+          tf.once('error', function(err) {
+            self.emit('error', err)
+          })
           tf.pipe(join)
           tf.write(data)
           tf.end()
