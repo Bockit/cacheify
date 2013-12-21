@@ -1,6 +1,6 @@
 {
   "name": "cacheify",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Wraps browserify transforms in a caching stream.",
   "main": "index.js",
   "scripts": {
