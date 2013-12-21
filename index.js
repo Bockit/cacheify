@@ -48,8 +48,9 @@ function cacheify (cachee, _db) {
       if (typeof db === 'function') db = db()
 
       db.get(hashed, function (err, transformed) {
+        // err means it wasn't in the db
         if (err) {
-          var join = concat(function(d) {
+          var cacher = concat(function(d) {
             d = d || ' '
             db.put(hashed, d)
             self.queue(d)
@@ -60,10 +61,11 @@ function cacheify (cachee, _db) {
           tf.once('error', function(err) {
             self.emit('error', err)
           })
-          tf.pipe(join)
+          tf.pipe(cacher)
           tf.write(data)
           tf.end()
         }
+        // Already cached
         else {
           self.queue(transformed)
           self.queue(null)
