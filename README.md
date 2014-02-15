@@ -48,6 +48,8 @@ Replaces the default hash function (md5 of the file's contents) with a function 
 Changelog
 ---------
 
+- **0.3.1** the second argument, db, can now be a function that returns a db. Useful if you need to close connections and unlock the leveldb between bundles.
+
 - **0.2.1**: When the filter returns false, instead of passing an empty through pass the original uncached transform. That way it can handle what gets transformed and we only handle what gets cached.
 
 - **0.2.0**: Do not use, has breaking bugs!! 0.2.1 fixes them. Apologies!
