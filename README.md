@@ -59,11 +59,6 @@ Changelog
   * Changed the order of arguments to cacheify, it takes the transform first and the db second
   * The db argument can now be a function instead of an object. If it is, it will call that function to get the db object. This gives you more flexibility when working in environments with complicated locking orders on the dbs.
 
-TODO
-----
-
-- Tests, seriously.
-
 License
 -------
 
