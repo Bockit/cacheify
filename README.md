@@ -47,6 +47,7 @@ Replaces the default hash function (md5 of the file's contents) with a function 
 
 Changelog
 ---------
+- **0.3.2** Now handles multiple errors in the cachee stream instead of only one.
 
 - **0.3.1** the second argument, db, can now be a function that returns a db. Useful if you need to close connections and unlock the leveldb between bundles.
 
