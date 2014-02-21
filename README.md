@@ -16,7 +16,7 @@ var cacheify = require('cacheify')
 
 ...
 
-var coffeeify = cacheify(coffeeify, db)
+var cachingCoffeeify = cacheify(coffeeify, db)
 
 ...
 
