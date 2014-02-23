@@ -46,7 +46,9 @@ Replaces the default hash function (md5 of the file's contents) with a function 
 - `fn`: The hash function you want to use. It takes two arguments, the file contents and the file path.
 
 Changelog
----------
+--------
+- **0.4.0** Now passes transform options through to cachee streams.
+
 - **0.3.2** Now handles multiple errors in the cachee stream instead of only one.
 
 - **0.3.1** the second argument, db, can now be a function that returns a db. Useful if you need to close connections and unlock the leveldb between bundles.
