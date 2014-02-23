@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "tape": "~2.3.0",
-    "browserify": "~2.36.1",
     "memdown": "~0.6.0",
-    "levelup": "~0.18.2"
+    "levelup": "~0.18.2",
+    "browserify": "~3.30.2"
   }
 }
