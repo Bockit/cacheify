@@ -25,7 +25,7 @@ function cacheify (cachee, _db) {
    * Transforms a file, reading it from cache instead if the hash exists in the
    * cache already.
    */
-  function transform (file) {
+  function transform (file, options) {
     // Early exit if we don't match the filter
     if (!filter(file)) {
       return cachee(file)
@@ -57,7 +57,7 @@ function cacheify (cachee, _db) {
             self.queue(null)
           })
 
-          var tf = cachee(file)
+          var tf = cachee(file, options)
           tf.on('error', function(err) {
             self.emit('error', err)
           })
