@@ -12,8 +12,6 @@ var db = level('/dev/null', { db: memdown })
  * once, despite running the bundle function once.
  */
 test('Only transforms once', function(t) {
-    t.plan(2)
-
     var counts = {
         transform: 0, // How many times we transformed
         bundle: 0 // How many times we ran
@@ -34,8 +32,8 @@ test('Only transforms once', function(t) {
         // Keep track of how many times we're called
         called++
         var b = browserify()
-        // It's weird we have to use the path from package.json and not relative to
-        // this file.
+        // It's weird we have to use the path from package.json and not relative
+        // to this file.
         b.add('./tests/sample')
         b.transform(cachingCounter)
         b.bundle({}, function(err, src) {
@@ -46,8 +44,9 @@ test('Only transforms once', function(t) {
 
     // Only call once we've finished bundling everything.
     function finish() {
-        t.equal(counts.transform, 1)
-        t.equal(counts.bundle, called)
+        t.equal(counts.transform, 1, 'Transform only performed once.')
+        t.equal(counts.bundle, called, 'Bundle called twice.')
+        t.end()
     }
 
     // Run a few times
