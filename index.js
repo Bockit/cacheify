@@ -28,7 +28,7 @@ function cacheify (cachee, _db) {
   function transform (file, options) {
     // Early exit if we don't match the filter
     if (!filter(file)) {
-      return cachee(file)
+      return cachee(file, options)
     }
 
     var data = ''
