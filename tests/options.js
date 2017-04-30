@@ -10,11 +10,8 @@ var db = level('/dev/null', { db: memdown })
 test('Passes options object', function(t) {
 
     function optionsChecker(file, options) {
-        t.deepEqual(options, {'poop': true},
-            'Options object passed to child transform.')
-
+        t.equal(options.poop, true, 'Options object passed to child transform.')
         t.end()
-
         return through()
     }
 

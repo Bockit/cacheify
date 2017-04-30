@@ -36,7 +36,7 @@ test('Only transforms once', function(t) {
         // to this file.
         b.add('./tests/sample')
         b.transform(cachingCounter)
-        b.bundle({}, function(err, src) {
+        b.bundle(function(err, src) {
             counts.bundle++
             cb()
         })
