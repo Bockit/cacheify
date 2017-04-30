@@ -47,6 +47,8 @@ Replaces the default hash function (md5 of the file's contents) with a function 
 
 Changelog
 --------
+- **0.4.2** Updates concat-stream to remove a security vulneratbility. Thanks for @puzrin for the report (#11).
+
 - **0.4.0** Now passes transform options through to cachee streams.
 
 - **0.3.2** Now handles multiple errors in the cachee stream instead of only one.

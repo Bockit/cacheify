@@ -1,6 +1,6 @@
 {
   "name": "cacheify",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Wraps browserify transforms in a caching stream.",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,13 @@
     "url": "https://github.com/Bockit/cacheify/issues"
   },
   "dependencies": {
-    "through": "~2.3.4",
-    "concat-stream": "~1.0.1"
+    "through": "^2.3.8",
+    "concat-stream": "^1.6.0"
   },
   "devDependencies": {
-    "tape": "~2.3.0",
-    "memdown": "~0.6.0",
-    "levelup": "~0.18.2",
-    "browserify": "~3.30.2"
+    "tape": "2.3.0",
+    "memdown": "^0.6.0",
+    "levelup": "^0.18.2",
+    "browserify": "^14.3.0"
   }
 }
